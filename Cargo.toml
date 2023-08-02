@@ -23,6 +23,8 @@ csbindgen = "1.7.0"
 itertools = "0.10.0"
 num-traits = "0.2.14"
 num-bigint = "0.3"
+bincode = "1.3.3"
+libc = "0.2.147"
 
 [dev-dependencies]
 yaml-rust = "0.4.4"

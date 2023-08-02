@@ -64,6 +64,12 @@ pub trait Decode {
     fn decode(self) -> Result<BencodexValue, DecodeError>;
 }
 
+impl Decode for &[u8] {
+    fn decode(self) -> Result<BencodexValue, DecodeError> {
+        decode_impl(self, 0).map(|(value, _)| value)
+    }
+}
+
 trait ShouldNotBeNone<T> {
     fn should_not_be_none(self) -> Result<T, DecodeError>;
 }
